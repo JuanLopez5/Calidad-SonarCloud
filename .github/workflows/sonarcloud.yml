@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - develop # Maybe
+      - develop
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Shallow clones should be disabled for better analysis
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -47,11 +47,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: SonarCloud Quality Gate check
-        uses: SonarSource/sonarqube-quality-gate-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        continue-on-error: true
 
   # Job 2: Análisis del Frontend (React/Vite)
   # frontend-analysis:
