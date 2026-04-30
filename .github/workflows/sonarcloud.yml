@@ -83,8 +83,8 @@ jobs:
   #       with:
   #           projectBaseDir: ./Frontend
   #           args: >
-  #               -Dsonar.organization=integrationsonar
-  #               -Dsonar.projectKey=Camilo-Benavides_Expiry-Pal-Sonar-Cloud
+  #               -Dsonar.organization=
+  #               -Dsonar.projectKey=
 
   # Job 3: Quality Gate Check
   # quality-gate:
